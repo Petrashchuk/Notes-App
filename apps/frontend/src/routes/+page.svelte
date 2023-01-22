@@ -1,10 +1,9 @@
-<script>
-	function a() {
-		const a = 0;
-	}
+<script lang="ts">
+	import Editor from '../components/Editor.svelte';
+	import Sidebar from '../components/Sidebar.svelte';
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>
-	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<div class="flex items-start">
+	<Sidebar />
+	<Editor />
+</div>
