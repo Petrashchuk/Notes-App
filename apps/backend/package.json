@@ -2,18 +2,30 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc ./index.ts"
+    "dev": "rm -rf dist && npx tsc && node ./dist/index.js",
+    "build": "rm -rf dist && npx tsc"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.3.1"
+    "apollo-server": "3.11.1",
+    "mongoose": "^6.8.4",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
-    "type-graphql": "^1.1.1",
-    "tsconfig": "*"
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-standard-with-typescript": "^31.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "tsconfig": "*",
+    "type-graphql": "1.1.1",
+    "typescript": "^4.9.4"
+  },
+  "overrides": {
+    "graphql": "15.3.0"
   }
 }
