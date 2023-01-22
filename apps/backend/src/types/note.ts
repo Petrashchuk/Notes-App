@@ -3,8 +3,8 @@ import { Field, ObjectType } from 'type-graphql';
 
 @ObjectType()
 export class Note {
-    @Field(() => String)
-    id?: string;
+    @Field(() => String,{ nullable: true })
+    _id?: string;
 
     @Field(() => String)
     name!: string;

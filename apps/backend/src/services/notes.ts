@@ -1,20 +1,16 @@
-import { Note } from "../types";
-import { Note as NoteModel } from "../model/note";
-class Notes<T extends typeof NoteModel> {
-  private readonly Model: T;
-  constructor(model: T) {
-    this.Model = model;
-  }
+import { Note } from '../types';
+import { MongoDataSource } from 'apollo-datasource-mongodb';
 
-  async create(note: Note) {
-    const createNote = new this.Model(note);
-    await createNote.save();
-
-    return createNote;
-  }
-  async findById(id: string) {
-    return this.Model.findById(id);
-  }
+//todo ts-ignore
+export class Notes extends MongoDataSource<Note> {
+	async createNote(note: Note) {
+		// @ts-ignore
+		const createdNote = new this.model(note);
+		await createdNote.save();
+		return createdNote as Note;
+	}
+	async getNote(id: string) {
+		// @ts-ignore
+		return this.model.findById(id) as Note;
+	}
 }
-
-export default new Notes(NoteModel); //todo
