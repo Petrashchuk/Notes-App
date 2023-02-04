@@ -7,7 +7,8 @@ import { resolvers } from './resolvers';
 import { connectDb } from './db';
 import { Notes } from './services';
 import { Note } from './model';
-import { Note as NoteType } from './types/note'
+import { NoteDb } from "./types";
+
 
 const PORT = 4000;
 
@@ -19,7 +20,7 @@ const PORT = 4000;
 			validate: false // todo
 		}),
 		dataSources: () => ({
-			notes: new Notes(Note as unknown as Collection<NoteType>)
+			notes: new Notes(Note as unknown as Collection<NoteDb>)
 		})
 	});
 	server.listen(PORT).then(() => {

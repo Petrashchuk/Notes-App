@@ -6,6 +6,6 @@ const url = `mongodb+srv://petrashchuk_andrii:Vito9550@cluster0.fvywc.mongodb.ne
 // todo
 
 
-export const connectDb = ()=>{
-    return  mongoose.connect(url,{}).then(() => console.log('Connected!'));
+export const connectDb = () => {
+    return mongoose.connect(url).then(() => console.log('Connected!'));
 }
