@@ -4,7 +4,6 @@ import { MongoDataSource } from 'apollo-datasource-mongodb';
 //todo ts-ignore
 export class Notes extends MongoDataSource<Note> {
 	async createNote(note: Note) {
-		// @ts-ignore
 		const createdNote = new this.model(note);
 		await createdNote.save();
 		return createdNote as Note;
