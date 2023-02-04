@@ -5,7 +5,7 @@
 	import { fade } from 'svelte/transition';
 	import { notesStore } from '../stores/notes';
 
-	let isPageVisible: boolean;
+	let isPageVisible: boolean | undefined;
 	let selectedNoteId: string | undefined;
 
 	const handleNoteSelect = (event: CustomEvent<string>) => (selectedNoteId = event.detail);

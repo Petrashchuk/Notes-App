@@ -56,7 +56,7 @@
 
 <div class="flex flex-col items-center w-full pt-5 h-full overflow-scroll">
 	<span class="text-xs text-gray-500 font-normal tracking-wider">
-		Edited: {dayjs(selectedNote.updated).format('DD MMMM YYYY, HH:MM')}
+		Edited: {dayjs(selectedNote?.updated).format('DD MMMM YYYY, HH:MM')}
 	</span>
 	<div class="w-full h-full" bind:this={element} />
 </div>
